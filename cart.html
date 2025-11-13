@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girls Burguer | Carrinho</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .total-carrinho {
+            text-align: right;
+            margin: 20px 0;
+            font-size: 1.3em;
+            font-family: 'Roboto', sans-serif;
+        }
+        .container-carrinho p {
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.1em;
+            color: #555;
+        }
+        .info-item-carrinho .preco {
+            font-weight: bold;
+            color: #fffdfd; /* CORREÇÃO: Usado #fffdfd no lugar de #333 para contraste em fundo escuro */
+            margin-top: 5px;
+        } 
+    </style>
+</head>
+<body>
+
+    <main class="secao-carrinho">
+        <a href="cardapio.html" class="link-voltar-cardapio">
+            ◀️ Voltar para o Cardápio
+        </a>
+
+        <h2 class="titulo-carrinho"> Carrinho</h2>
+
+        <div class="container-carrinho" id="cart-items-container">
+            <p>Seu carrinho está vazio.</p>
+        </div>
+
+        <div class="total-carrinho" style="color: #E2576F;">
+            <strong>Total: <span id="cart-total">R$ 0,00</span></strong>
+        </div>
+
+        <div class="botoes-finalizar-carrinho">
+            
+            <a href="#" onclick="enviarViaWhatsApp()" class="botao-finalizar-whatsapp">
+                Confirmar pedido via WhatsApp
+            </a>
+            
+        </div>
+
+        <div class="logo-rodape-cardapio">GIRLS BURGUER</div>
+    </main>
+
+    <script src="carrinho.js" defer></script> 
+</body>
+</html>

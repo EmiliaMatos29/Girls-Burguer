@@ -1,0 +1,170 @@
+/* === Configurações Globais === */
+:root {
+    --bg-color: #FFF6F6; /* Cor de fundo principal (rosa bem claro) */
+    --main-red: #E57373;  /* Vermelho/Rosa principal (usado na seta e borda) */
+    --dark-red: #D32F2F;  /* Vermelho escuro (usado no botão) */
+    --text-color: #333;
+    --highlight-color: #E57373; /* Cor do texto destacado */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', Arial, sans-serif; /* Usa a fonte importada */
+    background-color: var(--bg-color);
+    /* A imagem de fundo original tem padrões. 
+       Isso exigiria um arquivo de imagem para 'background-image'.
+       Por simplicidade, usamos uma cor sólida. */
+    min-height: 100vh;
+}
+
+.page-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+/* === Cabeçalho e Navegação === */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* ADICIONE ESTE BLOCO NO LUGAR DO ANTIGO */
+
+.link-voltar-cardapio {
+    /* As propriedades 'position', 'top' e 'left' foram removidas
+      para que o botão se alinhe automaticamente no cabeçalho.
+    */
+    color: var(--text-color); /* Era var(--cor-texto-escuro) */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 8px 16px;
+    background-color: white; /* Era var(--cor-principal-botao) - ajustado */
+    border-radius: 8px;
+    border: 2px solid var(--main-red); /* Era var(--cor-rosa-medio) */
+    transition: all 0.3s ease;
+}
+
+.link-voltar-cardapio:hover {
+    background-color: var(--main-red); /* Era var(--cor-rosa-medio) */
+    color: white; /* Era var(--cor-texto-claro) */
+}
+
+.nav-button {
+    padding: 10px 25px;
+    font-weight: bold;
+    color: var(--text-color);
+    border-radius: 20px 20px 0 0;
+}
+
+.nav-button.active {
+    background-color: var(--dark-red);
+    color: white;
+}
+
+/* === Conteúdo "Sobre Nós" === */
+.content {
+    position: relative;
+    z-index: 5; /* Garante que a caixa de texto fique atrás da ilustração */
+}
+
+.about-box {
+    border: 3px solid var(--main-red);
+    background-color: #ffffff; /* Fundo branco para a caixa de texto */
+    border-radius: 8px;
+    padding: 30px;
+    margin: 0 10px; /* Pequena margem lateral */
+    text-align: left; /* O texto na imagem é justificado, mas 'left' é mais seguro */
+}
+
+.about-box p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 1.5em; /* Espaço entre os parágrafos */
+}
+
+.about-box p:last-child {
+    margin-bottom: 0; /* Remove margem do último parágrafo */
+}
+
+.highlight {
+    color: var(--highlight-color);
+}
+
+/* === Ilustração === */
+.illustration-container {
+    text-align: center;
+    position: relative;
+    z-index: 10; /* Fica por cima da caixa de texto */
+    margin-top: -50px; /* Puxa a imagem para cima, sobrepondo a borda */
+}
+
+.illustration-container img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* === Logo (Rodapé) === */
+.footer {
+    position: fixed; /* Fixa o logo na tela */
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.logo {
+    width: 100px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+}
+
+/* === Ajustes para Telas Pequenas (Mobile) === */
+@media (max-width: 600px) {
+    .page-container {
+        padding: 10px;
+    }
+
+    .about-box {
+        padding: 20px;
+        margin: 0;
+    }
+
+    .back-arrow {
+        width: 30px;
+        height: 24px;
+        margin-left: 15px;
+    }
+
+    .back-arrow::before {
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+        border-right: 15px solid var(--main-red);
+    }
+
+    .nav-button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .illustration-container {
+        margin-top: -30px; /* Reduz a sobreposição em telas menores */
+    }
+
+    .footer {
+        position: static; /* Remove a posição fixa */
+        text-align: right;
+        margin-top: 20px;
+        padding-right: 10px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+}
